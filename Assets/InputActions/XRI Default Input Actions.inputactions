@@ -52,6 +52,14 @@
             "id": "5fe596f9-1b7b-49b7-80a7-3b5195caf74d",
             "actions": [
                 {
+                    "name": "ActivationUI",
+                    "type": "Button",
+                    "id": "a39cae77-5c9c-4ff3-9cb3-8f786e087b76",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Position",
                     "type": "Value",
                     "id": "83a7af0b-87e3-42c3-a909-95fbf8091e4f",
@@ -486,6 +494,17 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "76d8ee3a-b57c-49cd-aeeb-b0605d075acc",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivationUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

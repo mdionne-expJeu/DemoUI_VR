@@ -24,13 +24,14 @@ public class VRKeyboardManager : MonoBehaviour
 
 	public TMP_InputField playerNameInputField;
 
-	public GameObject leftMarret;
-	public GameObject rightMarret;
+	public GameObject leftMallet;
+	public GameObject rightMallet;
 
 
 	public GameObject leftBaseController; 
 	public GameObject rightBaseController;
 
+	public KeyCode toucheActivationClavier;
 
 	/// <summary>
 	/// Show the keyboard with a custom input message. Attaching events dynamically,
@@ -55,24 +56,24 @@ public class VRKeyboardManager : MonoBehaviour
 
 	void AttachMarrets()
 	{
-		leftMarret.transform.SetParent(leftBaseController.transform);
-		leftMarret.transform.localPosition = Vector3.zero;
-		leftMarret.transform.localRotation = Quaternion.Euler(new Vector3(90f,0f,0f));
-		leftMarret.SetActive(true);
+		leftMallet.transform.SetParent(leftBaseController.transform);
+		leftMallet.transform.localPosition = Vector3.zero;
+		leftMallet.transform.localRotation = Quaternion.Euler(new Vector3(90f,0f,0f));
+		leftMallet.SetActive(true);
 
-		rightMarret.transform.SetParent(rightBaseController.transform);
-		rightMarret.transform.localPosition = Vector3.zero;
-		rightMarret.transform.localRotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
-		rightMarret.SetActive(true);
+		rightMallet.transform.SetParent(rightBaseController.transform);
+		rightMallet.transform.localPosition = Vector3.zero;
+		rightMallet.transform.localRotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+		rightMallet.SetActive(true);
 	}
 
 	void DetachMarrets()
 	{
-		leftMarret.transform.SetParent(null);
-		leftMarret.SetActive(false);
+		leftMallet.transform.SetParent(null);
+		leftMallet.SetActive(false);
 
-		rightMarret.transform.SetParent(null);
-		rightMarret.SetActive(false);
+		rightMallet.transform.SetParent(null);
+		rightMallet.SetActive(false);
 
 	}
 
@@ -99,7 +100,7 @@ public class VRKeyboardManager : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(toucheActivationClavier))
 		{
 			if (keyboard.disabled)
 			{

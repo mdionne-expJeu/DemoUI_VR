@@ -61,9 +61,9 @@ namespace VRKeys {
 		void Awake () {
 			keyboard = GetComponent<Keyboard> ();
 
-			if (PlayerPrefs.HasKey (prefsKey)) {
-				JsonUtility.FromJsonOverwrite (PlayerPrefs.GetString (prefsKey), settings);
-			}
+			//if (PlayerPrefs.HasKey (prefsKey)) {
+				//JsonUtility.FromJsonOverwrite (PlayerPrefs.GetString (prefsKey), settings);
+			//}
 
 			keyboard.keyboardWrapper.transform.localPosition = settings.position;
 			keyboard.keyboardWrapper.transform.localRotation = settings.rotation;
@@ -173,7 +173,7 @@ namespace VRKeys {
 			settings.rotation = keyboard.keyboardWrapper.transform.localRotation;
 			settings.scale = keyboard.keyboardWrapper.transform.localScale;
 
-			PlayerPrefs.SetString (prefsKey, JsonUtility.ToJson (settings));
+			//PlayerPrefs.SetString (prefsKey, JsonUtility.ToJson (settings));
 		}
 	}
 }
